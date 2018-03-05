@@ -22,7 +22,8 @@ defmodule NbaEx.MixProject do
   defp deps do
     [
       {:httpoison, "~> 1.0"},
-      {:exvcr, "~> 0.10.1", only: :test}
+      {:exvcr, "~> 0.10.1", only: :test},
+      {:poison, "~> 3.1"}
     ]
   end
 end
