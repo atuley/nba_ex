@@ -1,8 +1,9 @@
 defmodule NbaEx.Players do
-  alias NbaEx.Players
-  defstruct [
 
-  ]
+  def find_player_id(last_name, first_name) do
+    all()
+    |> find_player_match("#{last_name}, #{first_name}")
+  end
 
   def all do
     HTTPoison.get!("http://stats.nba.com/stats/commonallplayers/?LeagueID=00&Season=2017-18&IsOnlyCurrentSeason=1", [
@@ -15,12 +16,15 @@ defmodule NbaEx.Players do
     |> Poison.decode!
     |> get_players
   end
+  defp get_players(%{"resultSets" => [%{"rowSet" => all_players}]}), do: all_players
 
-  def get_players(%{"resultSets" => [%{"rowSet" => [[_, "Abrines, Alex", firstLast | _] | _tail ]}]}) do
-    %{firstLast: firstLast}
+  # lowercase names before matching
+  # Use Enum.at?
+  defp find_player_match([head | tail], formatted_name) do
+    case Enum.find(head, fn(player_name) -> player_name == formatted_name end) do
+      nil -> find_player_match(tail, formatted_name)
+      _ -> head |> List.first
+    end
   end
-
-  # def grab_players(%{"rowSet" => players}) do
-  #   player
-  # end
+  defp find_player_match([], _formatted_name), do: "Player not found"
 end
