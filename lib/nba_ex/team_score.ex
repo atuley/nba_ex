@@ -1,7 +1,7 @@
 defmodule NbaEx.TeamScore do
   defstruct [
-    teamId: "",
-    triCode: "",
-    score: ""
+    :teamId,
+    :triCode,
+    :score
   ]
 end

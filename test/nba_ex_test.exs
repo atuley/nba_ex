@@ -9,8 +9,16 @@ defmodule NbaExTest do
   test "scoreboard_for/1" do
     use_cassette "20180308_scoreboard" do
       scoreboard = NbaEx.scoreboard_for("20180308")
-      
+
       assert scoreboard.games |> Kernel.length == 5
+    end
+  end
+
+  test "teams/0" do
+    use_cassette "teams" do
+      teams = NbaEx.teams()
+
+      assert teams |> Kernel.length == 30
     end
   end
 end

@@ -8,6 +8,6 @@ defmodule NbaEx.Game do
     clock: "",
     period: %GamePeriod{},
     vTeam: %TeamScore{},
-    hTeam: %TeamScore{},
+    hTeam: %TeamScore{}
   ]
 end
