@@ -1,11 +1,13 @@
 defmodule NbaEx.Game do
+  alias NbaEx.{Arena, GamePeriod, TeamScore}
+
   defstruct [
+    arena: %Arena{},
     gameId: "",
     startTimeUTC: "",
     clock: "",
-    arena: %{},
-    period: %{},
-    vTeam: %{},
-    hTeam: %{},
+    period: %GamePeriod{},
+    vTeam: %TeamScore{},
+    hTeam: %TeamScore{},
   ]
 end
