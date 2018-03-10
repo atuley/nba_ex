@@ -1,18 +1,11 @@
 defmodule NbaEx do
-  @moduledoc """
-  Documentation for NbaEx.
-  """
+  alias NbaEx.Scoreboard
 
-  @doc """
-  Hello world.
+  def scoreboard do
+    Scoreboard.get_current_scoreboard
+  end
 
-  ## Examples
-
-      iex> NbaEx.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def scoreboard_for(date) do
+    Scoreboard.get_scoreboard(date)
   end
 end
