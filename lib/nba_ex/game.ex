@@ -1,5 +1,11 @@
 defmodule NbaEx.Game do
   defstruct [
-    gameId: ""
+    gameId: "",
+    startTimeUTC: "",
+    clock: "",
+    arena: %{},
+    period: %{},
+    vTeam: %{},
+    hTeam: %{},
   ]
 end

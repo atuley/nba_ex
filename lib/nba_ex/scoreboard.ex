@@ -2,7 +2,8 @@ defmodule NbaEx.Scoreboard do
   alias NbaEx.{Constants, Endpoints, Game, Helpers}
 
   defstruct [
-    games: []
+    games: [],
+    numGames: ""
   ]
 
   def get_current_scoreboard do

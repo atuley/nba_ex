@@ -1,6 +1,7 @@
 defmodule NbaEx do
   alias NbaEx.Scoreboard
 
+  # UTC date
   def scoreboard do
     Scoreboard.get_current_scoreboard
   end
