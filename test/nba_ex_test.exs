@@ -6,6 +6,14 @@ defmodule NbaExTest do
     HTTPoison.start
   end
 
+  test "players/0" do
+    use_cassette "players" do
+      players = NbaEx.players()
+
+      assert players |> Kernel.length == 599
+    end
+  end
+
   test "scoreboard_for/1" do
     use_cassette "20180308_scoreboard" do
       scoreboard = NbaEx.scoreboard_for("20180308")

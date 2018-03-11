@@ -6,6 +6,7 @@ defmodule NbaEx.Scoreboard do
     numGames: ""
   ]
 
+  # TODO This is UTC
   def get_current_scoreboard do
     get_scoreboard(Helpers.current_date)
   end

@@ -1,7 +1,10 @@
 defmodule NbaEx do
-  alias NbaEx.{Scoreboard, Teams}
+  alias NbaEx.{Players, Scoreboard, Teams}
 
-  # UTC date
+  def players do
+    Players.all()
+  end
+
   def scoreboard do
     Scoreboard.get_current_scoreboard()
   end

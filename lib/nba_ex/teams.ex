@@ -2,7 +2,7 @@ defmodule NbaEx.Teams do
   alias NbaEx.{Constants, Endpoints, Team}
 
   def all do
-    HTTPoison.get!("#{Constants.base_url}/#{Constants.base_version}/2017/#{Endpoints.teams}").body
+    HTTPoison.get!("#{Constants.base_url}/#{Constants.base_version}/#{Constants.year}/#{Endpoints.teams}").body
     |> Poison.decode!(as: %{"league" => %{"standard" => [%Team{}]}})
     |> reject_non_nba_teams
   end

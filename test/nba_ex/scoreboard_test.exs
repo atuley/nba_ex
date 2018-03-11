@@ -12,7 +12,7 @@ defmodule ScoreboardTest do
     use_cassette "20180308_scoreboard" do
       scoreboard = Scoreboard.get_scoreboard("20180308")
 
-      actual_game = scoreboard.games |> List.first
+      actual_game   = scoreboard.games |> List.first
       expected_game = %NbaEx.Game{
               arena: %NbaEx.Arena{
                 city: "Charlotte",
