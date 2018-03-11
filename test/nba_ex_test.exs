@@ -6,6 +6,14 @@ defmodule NbaExTest do
     HTTPoison.start
   end
 
+  test "boxscore/2" do
+    use_cassette "boxscore" do
+      actual_boxscore = NbaEx.boxscore("20180309", "0021700977")
+
+      assert actual_boxscore.gameId == "0021700977"
+    end
+  end
+
   test "players/0" do
     use_cassette "players" do
       players = NbaEx.players()

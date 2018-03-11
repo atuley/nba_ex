@@ -5,6 +5,7 @@ defmodule NbaEx.Game do
     arena: %Arena{},
     gameId: "",
     startTimeUTC: "",
+    endTimeUTC: "",
     clock: "",
     period: %GamePeriod{},
     vTeam: %TeamScore{},
