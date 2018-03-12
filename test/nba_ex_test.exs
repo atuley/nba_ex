@@ -10,7 +10,7 @@ defmodule NbaExTest do
     use_cassette "boxscore" do
       actual_boxscore = NbaEx.boxscore("20180309", "0021700977")
 
-      assert actual_boxscore.gameId == "0021700977"
+      assert actual_boxscore.game.gameId == "0021700977"
     end
   end
 
