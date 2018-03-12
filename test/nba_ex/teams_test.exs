@@ -10,23 +10,12 @@ defmodule TeamsTest do
 
   test "all/0" do
     use_cassette "teams" do
-      teams = Teams.all()
-
+      teams         = Teams.all()
       actual_team   = teams |> List.first
-      expected_team = %NbaEx.Team{
-                        city: "Atlanta",
-                        confName: "East",
-                        divName: "Southeast",
-                        fullName: "Atlanta Hawks",
-                        isNBAFranchise: true,
-                        nickname: "Hawks",
-                        teamId: "1610612737",
-                        tricode: "ATL"
-                      }
 
       assert teams |> Kernel.length == 30
-      assert actual_team.teamId     == expected_team.teamId
-      assert actual_team.fullName   == expected_team.fullName
+      assert actual_team.teamId     == "1610612737"
+      assert actual_team.fullName   == "Atlanta Hawks"
     end
   end
 end
