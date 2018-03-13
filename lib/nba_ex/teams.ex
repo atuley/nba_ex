@@ -7,8 +7,8 @@ defmodule NbaEx.Teams do
     |> reject_non_nba_teams
   end
 
-  defp reject_non_nba_teams(response) do
-    response["league"]["standard"]
+  defp reject_non_nba_teams(%{"league" => %{"standard" => teams}}) do
+    teams
     |> Stream.reject(fn(team) -> team.isNBAFranchise == false end)
     |> Enum.to_list
   end
