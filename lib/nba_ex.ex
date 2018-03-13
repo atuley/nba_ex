@@ -1,8 +1,12 @@
 defmodule NbaEx do
-  alias NbaEx.{Boxscore, Players, Scoreboard, Teams}
+  alias NbaEx.{Boxscore, Player, Players, Scoreboard, Teams}
 
   def boxscore(date, game_id) do
     Boxscore.get_boxscore(date, game_id)
+  end
+
+  def player_game_log_for(player_id) do
+    Player.game_log(player_id)
   end
 
   def players do

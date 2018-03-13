@@ -8,9 +8,17 @@ defmodule NbaExTest do
 
   test "boxscore/2" do
     use_cassette "boxscore" do
-      actual_boxscore = NbaEx.boxscore("20180309", "0021700977")
+      boxscore = NbaEx.boxscore("20180309", "0021700977")
 
-      assert actual_boxscore.game.gameId == "0021700977"
+      assert boxscore.game.gameId == "0021700977"
+    end
+  end
+
+  test "player_game_log_for/1" do
+    use_cassette "player_game_log" do
+      player_game_log = NbaEx.player_game_log_for("203463")
+
+      assert player_game_log |> Kernel.length == 3
     end
   end
 
