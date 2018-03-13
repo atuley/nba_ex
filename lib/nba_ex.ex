@@ -27,7 +27,6 @@ defmodule NbaEx do
   # leagueSchedule: "/prod/v1/2017/schedule.json",
   # pbp: "/prod/v1/{{gameDate}}/{{gameId}}_pbp_{{periodNum}}.json",
   # teamSchedule: "/prod/v1/2017/teams/{{teamUrlCode}}/schedule.json",
-
   # teamsConfig: "/prod/2017/teams_config.json",
   # teamRoster: "/prod/v1/2017/teams/{{teamUrlCode}}/roster.json",
   # teamLeaders: "/prod/v1/2017/teams/{{teamUrlCode}}/leaders.json",
