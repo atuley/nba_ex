@@ -7,6 +7,7 @@ defmodule NbaEx.Scoreboard do
   ]
 
   # TODO This is UTC
+  # TODO Add is active field to know if game is complete
   def get_current_scoreboard do
     get_scoreboard(Helpers.current_date)
   end
