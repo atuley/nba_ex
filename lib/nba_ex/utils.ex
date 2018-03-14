@@ -4,12 +4,9 @@ defmodule NbaEx.Utils do
   @year         "2017/"
 
   def build_url(endpoint = "boxscore.json", date, game_id), do: base_url() <> date  <> "/#{game_id}_#{endpoint}"
-  def build_url(endpoint = "coaches.json"),                 do: base_url() <> @year <> endpoint
   def build_url(endpoint = "gamelog.json", player_id),      do: base_url() <> @year <> "players/#{player_id}_#{endpoint}"
-  def build_url(endpoint = "players.json"),                 do: base_url() <> @year <> endpoint
   def build_url(endpoint = "scoreboard.json", date),        do: base_url() <> date  <> "/#{endpoint}"
-  def build_url(endpoint = "teams.json"),                   do: base_url() <> @year <> endpoint
-  def build_url(_),                                         do: "Endpoint does not exist"
+  def build_url(endpoint),                                  do: base_url() <> @year <> endpoint
 
   def current_date do
     Date.utc_today

@@ -1,5 +1,5 @@
 defmodule NbaEx.Players do
-  alias NbaEx.{Endpoints, Utils, Player}
+  alias NbaEx.{Player, Utils}
 
   @endpoint "players.json"
 
