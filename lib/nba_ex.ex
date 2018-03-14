@@ -5,7 +5,7 @@ defmodule NbaEx do
   def coaches,                        do: Coaches.all()
   def player_game_log_for(player_id), do: Player.game_log(player_id)
   def players,                        do: Players.all()
-  def scoreboard,                     do: Scoreboard.get_current_scoreboard()
+  def scoreboard,                     do: Scoreboard.get_scoreboard()
   def scoreboard_for(date),           do: Scoreboard.get_scoreboard(date)
   def teams,                          do: Teams.all()
 

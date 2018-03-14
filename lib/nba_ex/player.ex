@@ -22,7 +22,6 @@ defmodule NbaEx.Player do
     country: ""
   ]
 
-  # TODO create function to grab response["league"]["standard"]
   def game_log(player_id) do
     response = @endpoint
     |> Utils.build_url(player_id)

@@ -1,7 +1,7 @@
 defmodule NbaEx.Players do
   alias NbaEx.{Endpoints, Utils, Player}
 
-  @endpoint Endpoints.players
+  @endpoint "players.json"
 
   def all do
     response = @endpoint
