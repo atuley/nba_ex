@@ -14,6 +14,14 @@ defmodule NbaExTest do
     end
   end
 
+  test "coaches/0" do
+    use_cassette "coaches" do
+      coaches = NbaEx.coaches()
+
+      assert coaches |> Kernel.length == 213
+    end
+  end
+
   test "player_game_log_for/1" do
     use_cassette "player_game_log" do
       player_game_log = NbaEx.player_game_log_for("203463")

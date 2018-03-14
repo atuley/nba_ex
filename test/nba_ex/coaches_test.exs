@@ -1,0 +1,23 @@
+defmodule CoachesTest do
+  use ExUnit.Case, async: false
+  use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
+
+  alias NbaEx.Coaches
+
+  setup_all do
+    HTTPoison.start
+  end
+
+  test "all/0" do
+    use_cassette "coaches" do
+      coaches           = Coaches.all()
+      number_of_coaches = coaches |> Kernel.length
+      first_coach       = coaches |> List.first
+
+      assert number_of_coaches       == 213
+      assert first_coach.college     == "Oklahoma"
+      assert first_coach.isAssistant == true
+      assert first_coach.personId    == "1337"
+    end
+  end
+end

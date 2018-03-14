@@ -1,8 +1,12 @@
 defmodule NbaEx do
-  alias NbaEx.{Boxscore, Player, Players, Scoreboard, Teams}
+  alias NbaEx.{Coaches, Boxscore, Player, Players, Scoreboard, Teams}
 
   def boxscore(date, game_id) do
     Boxscore.get_boxscore(date, game_id)
+  end
+
+  def coaches do
+    Coaches.all()
   end
 
   def player_game_log_for(player_id) do
@@ -25,8 +29,8 @@ defmodule NbaEx do
     Teams.all()
   end
 
-  # playerGameLog: "/prod/v1/2017/players/{{personId}}_gamelog.json",
   # playerProfile: "/prod/v1/2017/players/{{personId}}_profile.json",
+
   # leagueRosterCoaches: "/prod/v1/2017/coaches.json",
   # leagueSchedule: "/prod/v1/2017/schedule.json",
   # pbp: "/prod/v1/{{gameDate}}/{{gameId}}_pbp_{{periodNum}}.json",
