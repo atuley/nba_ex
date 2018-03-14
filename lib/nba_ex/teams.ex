@@ -1,8 +1,13 @@
 defmodule NbaEx.Teams do
-  alias NbaEx.{Constants, Endpoints, Team}
+  alias NbaEx.{Team, Utils}
+
+  @endpoint "teams.json"
 
   def all do
-    HTTPoison.get!("#{Constants.base_url}/#{Constants.base_version}/#{Constants.year}/#{Endpoints.teams}").body
+    @endpoint
+    |> Utils.build_url
+    |> HTTPoison.get!
+    |> Map.get(:body)
     |> Poison.decode!(as: %{"league" => %{"standard" => [%Team{}]}})
     |> reject_non_nba_teams
   end
