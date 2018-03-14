@@ -1,11 +1,15 @@
 defmodule NbaEx.Coaches do
-  alias NbaEx.{Constants, Endpoints, Coach}
+  alias NbaEx.{Coach, Utils}
+
+  @endpoint "coaches.json"
 
   def all do
-    HTTPoison.get!("#{Constants.base_url}/#{Constants.base_version}/#{Constants.year}/#{Endpoints.coaches}").body
+    response = @endpoint
+    |> Utils.build_url
+    |> HTTPoison.get!
+    |> Map.get(:body)
     |> Poison.decode!(as: %{"league" => %{"standard" => [%Coach{}]}})
-    |> grab_coaches
-  end
 
-  defp grab_coaches(%{"league" => %{"standard" => coaches}}), do: coaches
+    response["league"]["standard"]
+  end
 end
