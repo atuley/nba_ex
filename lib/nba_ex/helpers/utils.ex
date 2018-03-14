@@ -5,6 +5,7 @@ defmodule NbaEx.Utils do
 
   def build_url(endpoint = "boxscore.json", date, game_id), do: base_url() <> date <> "/#{game_id}_#{endpoint}"
   def build_url(endpoint = "coaches.json"),                 do: base_url() <> @year <> endpoint
+  def build_url(endpoint = "gamelog.json", player_id),      do: base_url() <> @year <> "players/#{player_id}_#{endpoint}"
   def build_url(endpoint = "players.json"),                 do: base_url() <> @year <> endpoint
   def build_url(_endpoint, _date, _game_id),                do: {:error, "Date or game ID is invalid"}
   def build_url(_endpoint),                                 do: {:error, "Endpoint does not exist"}
@@ -14,7 +15,7 @@ defmodule NbaEx.Utils do
     |> Date.to_iso8601(:basic)
   end
 
-  def base_url do
+  defp base_url do
     @base_url <> @base_version
   end
 

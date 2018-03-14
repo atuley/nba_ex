@@ -1,5 +1,7 @@
 defmodule NbaEx.Player do
-  alias NbaEx.{Constants, Endpoints, PlayerGameLog, Team}
+  alias NbaEx.{PlayerGameLog, Team, Utils}
+
+  @endpoint "gamelog.json"
 
   defstruct [
     firstName: "",
@@ -20,11 +22,14 @@ defmodule NbaEx.Player do
     country: ""
   ]
 
+  # TODO create function to grab response["league"]["standard"]
   def game_log(player_id) do
-    HTTPoison.get!("#{Constants.base_url}/#{Constants.base_version}/#{Constants.year}/players/#{player_id}_#{Endpoints.player_game_log}").body
+    response = @endpoint
+    |> Utils.build_url(player_id)
+    |> HTTPoison.get!
+    |> Map.get(:body)
     |> Poison.decode!(as: %{"league" => %{"standard" => [%PlayerGameLog{}]}})
-    |> grab_game_logs
-  end
 
-  defp grab_game_logs(%{"league" => %{"standard" => player_game_logs}}), do: player_game_logs
+    response["league"]["standard"]
+  end
 end
