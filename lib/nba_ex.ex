@@ -1,33 +1,13 @@
 defmodule NbaEx do
   alias NbaEx.{Coaches, Boxscore, Player, Players, Scoreboard, Teams}
 
-  def boxscore(date, game_id) do
-    Boxscore.get_boxscore(date, game_id)
-  end
-
-  def coaches do
-    Coaches.all()
-  end
-
-  def player_game_log_for(player_id) do
-    Player.game_log(player_id)
-  end
-
-  def players do
-    Players.all()
-  end
-
-  def scoreboard do
-    Scoreboard.get_current_scoreboard()
-  end
-
-  def scoreboard_for(date) do
-    Scoreboard.get_scoreboard(date)
-  end
-
-  def teams do
-    Teams.all()
-  end
+  def boxscore(date, game_id),        do: Boxscore.get_boxscore(date, game_id)
+  def coaches,                        do: Coaches.all()
+  def player_game_log_for(player_id), do: Player.game_log(player_id)
+  def players,                        do: Players.all()
+  def scoreboard,                     do: Scoreboard.get_current_scoreboard()
+  def scoreboard_for(date),           do: Scoreboard.get_scoreboard(date)
+  def teams,                          do: Teams.all()
 
   # playerProfile: "/prod/v1/2017/players/{{personId}}_profile.json",
 
