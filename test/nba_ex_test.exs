@@ -62,6 +62,14 @@ defmodule NbaExTest do
     end
   end
 
+  test "team_roster" do
+    use_cassette "team_roster" do
+      roster = NbaEx.team_roster("warriors")
+
+      assert roster |> Kernel.length == 17
+    end
+  end
+
   test "team_schedule/1" do
     use_cassette "team_schedule" do
       team_schedule = NbaEx.team_schedule("warriors")

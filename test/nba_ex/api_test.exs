@@ -18,6 +18,15 @@ defmodule ApiTest do
     end
   end
 
+  test "team_roster/1" do
+    use_cassette "team_roster" do
+      roster = Api.team_roster("warriors")
+      first_player = roster |> List.first
+
+      assert first_player.personId == "1628395"
+    end
+  end
+
   test "team_schedule/1" do
     use_cassette "team_schedule" do
       team_schedule      = Api.team_schedule("warriors")

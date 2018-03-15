@@ -5,6 +5,7 @@ defmodule NbaEx.Utils do
 
   def build_url(endpoint = "boxscore.json", date, game_id), do: base_url() <> date  <> "/#{game_id}_#{endpoint}"
   def build_url(endpoint = "gamelog.json", player_id),      do: base_url() <> @year <> "players/#{player_id}_#{endpoint}"
+  def build_url(endpoint = "roster.json", team_name),       do: base_url() <> @year <> "teams/#{team_name}/#{endpoint}"
   def build_url(endpoint = "scoreboard.json", date),        do: base_url() <> date  <> "/#{endpoint}"
   def build_url(endpoint = "schedule.json", team_name),     do: base_url() <> @year <> "teams/#{team_name}/#{endpoint}"
   def build_url(endpoint = "pbp", date, game_id, period),   do: base_url() <> "#{date}/#{game_id}_#{endpoint}_#{period}.json"
