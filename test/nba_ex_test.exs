@@ -70,6 +70,14 @@ defmodule NbaExTest do
     end
   end
 
+  test "team_leaders/1" do
+    use_cassette "team_leaders" do
+      team_leaders = NbaEx.team_leaders("warriors")
+
+      assert team_leaders != nil
+    end
+  end
+
   test "team_roster" do
     use_cassette "team_roster" do
       roster = NbaEx.team_roster("warriors")

@@ -3,8 +3,10 @@ defmodule NbaEx.Utils do
   @base_version "v1/"
   @year         "2017/"
 
+  # TODO refactor, same function used more than once
   def build_url(endpoint = "boxscore.json", date, game_id), do: base_url() <> date  <> "/#{game_id}_#{endpoint}"
   def build_url(endpoint = "gamelog.json", player_id),      do: base_url() <> @year <> "players/#{player_id}_#{endpoint}"
+  def build_url(endpoint = "leaders.json", team_name),      do: base_url() <> @year <> "teams/#{team_name}/#{endpoint}"
   def build_url(endpoint = "roster.json", team_name),       do: base_url() <> @year <> "teams/#{team_name}/#{endpoint}"
   def build_url(endpoint = "scoreboard.json", date),        do: base_url() <> date  <> "/#{endpoint}"
   def build_url(endpoint = "schedule.json", team_name),     do: base_url() <> @year <> "teams/#{team_name}/#{endpoint}"

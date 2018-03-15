@@ -28,6 +28,16 @@ defmodule ApiTest do
     end
   end
 
+  test "team_leaders/1" do
+    use_cassette "team_leaders" do
+      team_leaders = Api.team_leaders("warriors")
+      ppg_leader   = team_leaders.ppg |> List.first
+
+      assert ppg_leader.personId == "201142"
+      assert ppg_leader.value    == "26.6"
+    end
+  end
+
   test "team_roster/1" do
     use_cassette "team_roster" do
       roster = Api.team_roster("warriors")
