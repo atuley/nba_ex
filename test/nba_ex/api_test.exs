@@ -18,6 +18,16 @@ defmodule ApiTest do
     end
   end
 
+  test "teams_config/0" do
+    use_cassette "teams_config" do
+      teams_config      = Api.teams_config()
+      first_team_config = teams_config |> List.first
+
+      assert first_team_config.teamId  == "1610612737"
+      assert first_team_config.tricode == "ATL"
+    end
+  end
+
   test "team_roster/1" do
     use_cassette "team_roster" do
       roster = Api.team_roster("warriors")

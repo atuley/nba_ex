@@ -1,9 +1,11 @@
 defmodule NbaEx.Api do
-  alias NbaEx.{Game, PlayByPlay, Player, Utils}
+  alias NbaEx.{Game, PlayByPlay, Player, TeamConfig, Utils}
 
-  @pbp      "pbp"
-  @roster   "roster.json"
-  @schedule "schedule.json"
+  # Endpoints
+  @pbp          "pbp"
+  @roster       "roster.json"
+  @schedule     "schedule.json"
+  @teams_config "teams_config.json"
 
   def play_by_play(date, game_id, period) do
     @pbp
@@ -21,6 +23,16 @@ defmodule NbaEx.Api do
     |> Poison.decode!(as: %{"league" => %{"standard" => [%Game{}]}})
 
     response["league"]["standard"]
+  end
+
+  def teams_config do
+    response = @teams_config
+    |> Utils.build_url
+    |> HTTPoison.get!
+    |> Map.get(:body)
+    |> Poison.decode!(as: %{"teams" => %{"config" => [%TeamConfig{}]}})
+
+    response["teams"]["config"]
   end
 
   def team_roster(team_name) do

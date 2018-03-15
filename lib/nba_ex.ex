@@ -9,10 +9,10 @@ defmodule NbaEx do
   def scoreboard,                          do: Scoreboard.get_scoreboard()
   def scoreboard_for(date),                do: Scoreboard.get_scoreboard(date)
   def teams,                               do: Teams.all()
+  def teams_config,                        do: Api.teams_config()
   def team_roster(team_name),              do: Api.team_roster(team_name)
   def team_schedule(team_name),            do: Api.team_schedule(team_name)
 
   # teamsConfig: "/prod/2017/teams_config.json",
   # teamLeaders: "/prod/v1/2017/teams/{{teamUrlCode}}/leaders.json",
-
 end
