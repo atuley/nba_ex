@@ -22,6 +22,14 @@ defmodule NbaExTest do
     end
   end
 
+  test "play_by_play/3" do
+    use_cassette "play_by_play" do
+      pbp = NbaEx.play_by_play("20180314", "0021701017", 3)
+
+      assert pbp.plays |> Kernel.length == 101
+    end
+  end
+
   test "player_game_log_for/1" do
     use_cassette "player_game_log" do
       player_game_log = NbaEx.player_game_log_for("203463")
