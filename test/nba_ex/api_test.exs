@@ -17,4 +17,16 @@ defmodule ApiTest do
       assert first_play_of_period.vTeamScore == "52"
     end
   end
+
+  test "team_schedule/1" do
+    use_cassette "team_schedule" do
+      team_schedule      = Api.team_schedule("warriors")
+      length_of_schedule = team_schedule |> Kernel.length
+      first_game         = team_schedule |> List.first
+
+      assert length_of_schedule          == 86
+      assert first_game.startTimeUTC     == "2017-10-01T00:30:00.000Z"
+      assert first_game.vTeam.score      == "108"
+    end
+  end
 end
