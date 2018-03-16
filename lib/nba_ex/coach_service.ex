@@ -1,10 +1,10 @@
-defmodule NbaEx.Coaches do
+defmodule NbaEx.CoachService do
   alias NbaEx.{Coach, Utils}
 
-  @endpoint "coaches.json"
+  @coaches "coaches.json"
 
   def all do
-    response = @endpoint
+    response = @coaches
     |> Utils.build_url
     |> HTTPoison.get!
     |> Map.get(:body)

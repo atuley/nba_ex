@@ -1,26 +1,27 @@
-defmodule ApiTest do
+defmodule TeamServiceTest do
   use ExUnit.Case, async: false
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
-  alias NbaEx.Api
+  alias NbaEx.TeamService
 
   setup_all do
     HTTPoison.start
   end
 
-  test "play_by_play/3" do
-    use_cassette "play_by_play" do
-      pbp                  = Api.play_by_play("20180314", "0021701017", 3)
-      first_play_of_period = pbp.plays |> List.first
+  test "all/0" do
+    use_cassette "teams" do
+      teams         = TeamService.all()
+      actual_team   = teams |> List.first
 
-      assert first_play_of_period.clock      == "12:00"
-      assert first_play_of_period.vTeamScore == "52"
+      assert teams |> Kernel.length == 30
+      assert actual_team.teamId     == "1610612737"
+      assert actual_team.fullName   == "Atlanta Hawks"
     end
   end
 
   test "teams_config/0" do
     use_cassette "teams_config" do
-      teams_config      = Api.teams_config()
+      teams_config      = TeamService.teams_config()
       first_team_config = teams_config |> List.first
 
       assert first_team_config.teamId  == "1610612737"
@@ -30,7 +31,7 @@ defmodule ApiTest do
 
   test "team_leaders/1" do
     use_cassette "team_leaders" do
-      team_leaders = Api.team_leaders("warriors")
+      team_leaders = TeamService.team_leaders("warriors")
       ppg_leader   = team_leaders.ppg |> List.first
 
       assert ppg_leader.personId == "201142"
@@ -40,7 +41,7 @@ defmodule ApiTest do
 
   test "team_roster/1" do
     use_cassette "team_roster" do
-      roster = Api.team_roster("warriors")
+      roster = TeamService.team_roster("warriors")
       first_player = roster |> List.first
 
       assert first_player.personId == "1628395"
@@ -49,7 +50,7 @@ defmodule ApiTest do
 
   test "team_schedule/1" do
     use_cassette "team_schedule" do
-      team_schedule      = Api.team_schedule("warriors")
+      team_schedule      = TeamService.team_schedule("warriors")
       length_of_schedule = team_schedule |> Kernel.length
       first_game         = team_schedule |> List.first
 

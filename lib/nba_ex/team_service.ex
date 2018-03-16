@@ -1,19 +1,19 @@
-defmodule NbaEx.Api do
-  alias NbaEx.{Game, PlayByPlay, Player, TeamConfig, TeamLeaders, Utils}
+defmodule NbaEx.TeamService do
+  alias NbaEx.{Game, Player, Team, TeamConfig, TeamLeaders, Utils}
 
-  # Endpoints
-  @pbp          "pbp"
   @roster       "roster.json"
   @schedule     "schedule.json"
+  @teams        "teams.json"
   @teams_config "teams_config.json"
   @team_leaders "leaders.json"
 
-  def play_by_play(date, game_id, period) do
-    @pbp
-    |> Utils.build_url(date, game_id, period)
+  def all do
+    @teams
+    |> Utils.build_url
     |> HTTPoison.get!
     |> Map.get(:body)
-    |> Poison.decode!(as: %PlayByPlay{})
+    |> Poison.decode!(as: %{"league" => %{"standard" => [%Team{}]}})
+    |> reject_non_nba_teams
   end
 
   def teams_config do
@@ -54,5 +54,11 @@ defmodule NbaEx.Api do
     |> Poison.decode!(as: %{"league" => %{"standard" => [%Game{}]}})
 
     response["league"]["standard"]
+  end
+
+  defp reject_non_nba_teams(%{"league" => %{"standard" => teams}}) do
+    teams
+    |> Stream.reject(fn(team) -> team.isNBAFranchise == false end)
+    |> Enum.to_list
   end
 end

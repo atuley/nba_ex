@@ -1,8 +1,8 @@
-defmodule CoachesTest do
+defmodule CoachServiceTest do
   use ExUnit.Case, async: false
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
-  alias NbaEx.Coaches
+  alias NbaEx.CoachService
 
   setup_all do
     HTTPoison.start
@@ -10,7 +10,7 @@ defmodule CoachesTest do
 
   test "all/0" do
     use_cassette "coaches" do
-      coaches           = Coaches.all()
+      coaches           = CoachService.all()
       number_of_coaches = coaches |> Kernel.length
       first_coach       = coaches |> List.first
 
