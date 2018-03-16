@@ -26,7 +26,10 @@ defmodule NbaEx.GameService do
     @scoreboard
     |> Utils.build_url(date)
     |> HTTPoison.get!
-    |> Map.get(:body)
+    |> case do
+        %HTTPoison.Response{body: body, status_code: 200} -> body
+        %HTTPoison.Response{status_code: _} -> raise ArgumentError, "Invalid date for scoreboard"
+       end
     |> Poison.decode!(as: %Scoreboard{games: [%Game{}]})
   end
   def get_scoreboard, do: get_scoreboard(Utils.current_date)
