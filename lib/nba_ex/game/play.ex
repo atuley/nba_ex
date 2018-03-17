@@ -8,6 +8,6 @@ defmodule NbaEx.Play do
     :vTeamScore,
     :hTeamScore,
     :isScoreChange,
-    :isVideoAvailable,
+    :isVideoAvailable
   ]
 end

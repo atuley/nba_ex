@@ -1,6 +1,4 @@
 defmodule NbaEx.Scoreboard do
-  defstruct [
-    games: [],
-    numGames: ""
-  ]
+  defstruct games: [],
+            numGames: ""
 end

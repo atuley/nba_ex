@@ -3,8 +3,12 @@ defmodule NbaEx.Utils do
   @base_version "v1"
   @year         "2017"
 
-  def build_url(endpoint = "pbp", date, game_id, period),   do: base_url() <> "#{date}/#{game_id}_#{endpoint}_#{period}.json"
-  def build_url(endpoint = "boxscore.json", date, game_id), do: base_url() <> date <> "/#{game_id}_#{endpoint}"
+  def build_url(endpoint = "pbp", date, game_id, period),
+    do: base_url() <> "#{date}/#{game_id}_#{endpoint}_#{period}.json"
+
+  def build_url(endpoint = "boxscore.json", date, game_id),
+    do: base_url() <> date <> "/#{game_id}_#{endpoint}"
+
   def build_url(endpoint, param) do
     case endpoint do
       "gamelog.json"    -> base_url() <> @year <> "/players/#{param}_#{endpoint}"
@@ -14,11 +18,12 @@ defmodule NbaEx.Utils do
       "scoreboard.json" -> base_url() <> param <> "/#{endpoint}"
     end
   end
-  def build_url(endpoint = "teams_config.json"), do: @base_url  <> @year <> "/#{endpoint}"
+
+  def build_url(endpoint = "teams_config.json"), do: @base_url <> @year <> "/#{endpoint}"
   def build_url(endpoint),                       do: base_url() <> @year <> "/#{endpoint}"
 
   def current_date do
-    Date.utc_today
+    Date.utc_today()
     |> Date.to_iso8601(:basic)
   end
 

@@ -3,7 +3,7 @@ defmodule NbaExTest do
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
   setup_all do
-    HTTPoison.start
+    HTTPoison.start()
   end
 
   test "boxscore/2" do
@@ -18,7 +18,7 @@ defmodule NbaExTest do
     use_cassette "coaches" do
       coaches = NbaEx.coaches()
 
-      assert coaches |> Kernel.length == 213
+      assert coaches |> Kernel.length() == 213
     end
   end
 
@@ -26,7 +26,7 @@ defmodule NbaExTest do
     use_cassette "play_by_play" do
       pbp = NbaEx.play_by_play("20180314", "0021701017", 3)
 
-      assert pbp.plays |> Kernel.length == 101
+      assert pbp.plays |> Kernel.length() == 101
     end
   end
 
@@ -34,7 +34,7 @@ defmodule NbaExTest do
     use_cassette "player_game_log" do
       player_game_log = NbaEx.player_game_log_for("203463")
 
-      assert player_game_log |> Kernel.length == 3
+      assert player_game_log |> Kernel.length() == 3
     end
   end
 
@@ -42,7 +42,7 @@ defmodule NbaExTest do
     use_cassette "players" do
       players = NbaEx.players()
 
-      assert players |> Kernel.length == 599
+      assert players |> Kernel.length() == 599
     end
   end
 
@@ -50,7 +50,7 @@ defmodule NbaExTest do
     use_cassette "20180308_scoreboard" do
       scoreboard = NbaEx.scoreboard_for("20180308")
 
-      assert scoreboard.games |> Kernel.length == 5
+      assert scoreboard.games |> Kernel.length() == 5
     end
   end
 
@@ -58,7 +58,7 @@ defmodule NbaExTest do
     use_cassette "teams" do
       teams = NbaEx.teams()
 
-      assert teams |> Kernel.length == 30
+      assert teams |> Kernel.length() == 30
     end
   end
 
@@ -66,7 +66,7 @@ defmodule NbaExTest do
     use_cassette "teams_config" do
       teams_config = NbaEx.teams_config()
 
-      assert teams_config |> Kernel.length == 41
+      assert teams_config |> Kernel.length() == 41
     end
   end
 
@@ -82,7 +82,7 @@ defmodule NbaExTest do
     use_cassette "team_roster" do
       roster = NbaEx.team_roster("warriors")
 
-      assert roster |> Kernel.length == 17
+      assert roster |> Kernel.length() == 17
     end
   end
 
@@ -90,7 +90,7 @@ defmodule NbaExTest do
     use_cassette "team_schedule" do
       team_schedule = NbaEx.team_schedule("warriors")
 
-      assert team_schedule |> Kernel.length == 86
+      assert team_schedule |> Kernel.length() == 86
     end
   end
 end

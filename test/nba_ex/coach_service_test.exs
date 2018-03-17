@@ -5,14 +5,14 @@ defmodule CoachServiceTest do
   alias NbaEx.CoachService
 
   setup_all do
-    HTTPoison.start
+    HTTPoison.start()
   end
 
   test "all/0" do
     use_cassette "coaches" do
       coaches           = CoachService.all()
-      number_of_coaches = coaches |> Kernel.length
-      first_coach       = coaches |> List.first
+      number_of_coaches = coaches |> Kernel.length()
+      first_coach       = coaches |> List.first()
 
       assert number_of_coaches       == 213
       assert first_coach.college     == "Oklahoma"
