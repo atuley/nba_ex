@@ -1,8 +1,8 @@
 defmodule NbaEx.Boxscore do
-  alias NbaEx.TeamStat
+  alias NbaEx.{Game, PlayerStat, TeamStat}
 
-  defstruct game: nil,
+  defstruct game: %Game{},
             home_team_stats: %TeamStat{},
             away_team_stats: %TeamStat{},
-            player_stats: nil
+            player_stats: [%PlayerStat{}]
 end

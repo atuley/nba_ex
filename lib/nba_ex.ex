@@ -2,12 +2,19 @@ defmodule NbaEx do
   alias NbaEx.{CoachApi, GameApi, PlayerApi, TeamApi}
 
   @doc """
-  This is a test
+  Gets the boxscore for a given date(YYYYMMDD) and game id.
 
-      iex> Exiban.hello
-      :world
+      iex> NbaEx.boxscore("20180316", "0021701032")
+      %Boxscore{
+        game: %Game{},
+        home_team_stats: %TeamStat{},
+        away_team_stats: %TeamStat{},
+        player_stats: [%PlayerStat{}]
+      }
   """
-  def boxscore(date, game_id) do
+  @spec boxscore(String.t, String.t) :: NbaEx.Boxscore.t
+    | {:error, String.t}
+  def boxscore(date, game_id \\ %{}) do
     GameApi.get_boxscore(date, game_id)
   rescue
     Poison.SyntaxError ->
@@ -25,5 +32,4 @@ defmodule NbaEx do
   def team_leaders(team_name),             do: TeamApi.team_leaders(team_name)
   def team_roster(team_name),              do: TeamApi.team_roster(team_name)
   def team_schedule(team_name),            do: TeamApi.team_schedule(team_name)
-
 end
