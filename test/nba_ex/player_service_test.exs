@@ -1,8 +1,8 @@
-defmodule PlayerServiceTest do
+defmodule PlayerApiTest do
   use ExUnit.Case, async: false
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
-  alias NbaEx.PlayerService
+  alias NbaEx.PlayerApi
 
   setup_all do
     HTTPoison.start()
@@ -10,7 +10,7 @@ defmodule PlayerServiceTest do
 
   test "all/0" do
     use_cassette "players" do
-      players        = PlayerService.all()
+      players        = PlayerApi.all()
       actual_player  = players |> List.first()
       num_of_players = players |> Kernel.length()
 
@@ -23,7 +23,7 @@ defmodule PlayerServiceTest do
 
   test "game_log_for/1" do
     use_cassette "player_game_log" do
-      player_game_log = PlayerService.game_log("203463")
+      player_game_log = PlayerApi.game_log("203463")
       number_of_games = player_game_log |> Kernel.length()
       first_game      = player_game_log |> List.first()
 

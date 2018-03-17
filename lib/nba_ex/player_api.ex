@@ -1,4 +1,4 @@
-defmodule NbaEx.PlayerService do
+defmodule NbaEx.PlayerApi do
   alias NbaEx.{Player, PlayerGameLog, Utils}
 
   @gamelog "gamelog.json"

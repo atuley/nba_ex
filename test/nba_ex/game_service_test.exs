@@ -1,8 +1,8 @@
-defmodule GameServiceTest do
+defmodule GameApiTest do
   use ExUnit.Case, async: false
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
-  alias NbaEx.GameService
+  alias NbaEx.GameApi
 
   setup_all do
     HTTPoison.start()
@@ -10,7 +10,7 @@ defmodule GameServiceTest do
 
   test "get_boxscore/2" do
     use_cassette "boxscore" do
-      actual_boxscore   = GameService.get_boxscore("20180309", "0021700977")
+      actual_boxscore   = GameApi.get_boxscore("20180309", "0021700977")
       first_player_stat = actual_boxscore.player_stats |> List.first()
 
       assert actual_boxscore.game.gameId                     == "0021700977"
@@ -22,7 +22,7 @@ defmodule GameServiceTest do
 
   test "play_by_play/3" do
     use_cassette "play_by_play" do
-      pbp                  = GameService.play_by_play("20180314", "0021701017", 3)
+      pbp                  = GameApi.play_by_play("20180314", "0021701017", 3)
       first_play_of_period = pbp.plays |> List.first()
 
       assert first_play_of_period.clock      == "12:00"
@@ -32,7 +32,7 @@ defmodule GameServiceTest do
 
   test "get_scoreboard/1" do
     use_cassette "20180308_scoreboard" do
-      scoreboard   = GameService.get_scoreboard("20180308")
+      scoreboard   = GameApi.get_scoreboard("20180308")
       actual_game  = scoreboard.games |> List.first()
       num_of_games = scoreboard.games |> Kernel.length()
 

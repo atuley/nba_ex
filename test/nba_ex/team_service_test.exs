@@ -1,8 +1,8 @@
-defmodule TeamServiceTest do
+defmodule TeamApiTest do
   use ExUnit.Case, async: false
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
-  alias NbaEx.TeamService
+  alias NbaEx.TeamApi
 
   setup_all do
     HTTPoison.start()
@@ -10,7 +10,7 @@ defmodule TeamServiceTest do
 
   test "all/0" do
     use_cassette "teams" do
-      teams       = TeamService.all()
+      teams       = TeamApi.all()
       actual_team = teams |> List.first()
 
       assert teams |> Kernel.length() == 30
@@ -21,7 +21,7 @@ defmodule TeamServiceTest do
 
   test "teams_config/0" do
     use_cassette "teams_config" do
-      teams_config      = TeamService.teams_config()
+      teams_config      = TeamApi.teams_config()
       first_team_config = teams_config |> List.first()
 
       assert first_team_config.teamId  == "1610612737"
@@ -31,7 +31,7 @@ defmodule TeamServiceTest do
 
   test "team_leaders/1" do
     use_cassette "team_leaders" do
-      team_leaders = TeamService.team_leaders("warriors")
+      team_leaders = TeamApi.team_leaders("warriors")
       ppg_leader   = team_leaders.ppg |> List.first()
 
       assert ppg_leader.personId == "201142"
@@ -41,7 +41,7 @@ defmodule TeamServiceTest do
 
   test "team_roster/1" do
     use_cassette "team_roster" do
-      roster       = TeamService.team_roster("warriors")
+      roster       = TeamApi.team_roster("warriors")
       first_player = roster |> List.first()
 
       assert first_player.personId == "1628395"
@@ -50,7 +50,7 @@ defmodule TeamServiceTest do
 
   test "team_schedule/1" do
     use_cassette "team_schedule" do
-      team_schedule      = TeamService.team_schedule("warriors")
+      team_schedule      = TeamApi.team_schedule("warriors")
       length_of_schedule = team_schedule |> Kernel.length()
       first_game         = team_schedule |> List.first()
 

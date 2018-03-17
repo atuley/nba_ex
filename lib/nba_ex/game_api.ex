@@ -1,4 +1,4 @@
-defmodule NbaEx.GameService do
+defmodule NbaEx.GameApi do
   alias NbaEx.{Game, PlayByPlay, PlayerStat, Scoreboard, TeamStat, Utils}
 
   @boxscore   "boxscore.json"

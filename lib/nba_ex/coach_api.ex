@@ -1,4 +1,4 @@
-defmodule NbaEx.CoachService do
+defmodule NbaEx.CoachApi do
   alias NbaEx.{Coach, Utils}
 
   @coaches "coaches.json"

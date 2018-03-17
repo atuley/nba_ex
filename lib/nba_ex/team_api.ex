@@ -1,4 +1,4 @@
-defmodule NbaEx.TeamService do
+defmodule NbaEx.TeamApi do
   alias NbaEx.{Game, Player, Team, TeamConfig, TeamLeaders, Utils}
 
   @roster       "roster.json"
