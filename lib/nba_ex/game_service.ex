@@ -31,18 +31,14 @@ defmodule NbaEx.GameService do
     |> Poison.decode!(as: %PlayByPlay{})
   end
 
+  def get_scoreboard, do: Utils.current_date() |> get_scoreboard()
   def get_scoreboard(date) do
-    with %HTTPoison.Response{body: body, status_code: 200} <-
-      @scoreboard
-      |> Utils.build_url(date)
-      |> HTTPoison.get!()
-    do
-      Poison.decode!(body, as: %Scoreboard{games: [%Game{}]})
-    else
-      _ -> {:error, "#{date} is not a valid date. Proper format is: YYYYMMDD"}
-    end
+    @scoreboard
+    |> Utils.build_url(date)
+    |> HTTPoison.get!()
+    |> Map.get(:body)
+    |> Poison.decode!(as: %Scoreboard{games: [%Game{}]})
   end
-  def get_scoreboard, do: get_scoreboard(Utils.current_date())
 
   defp build_boxscore(%{
          "basicGameData" => game,

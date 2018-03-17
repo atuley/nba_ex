@@ -21,9 +21,11 @@ defmodule NbaEx.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:ex_doc, "~> 0.18.3"},
       {:exvcr, "~> 0.10.1", only: :test},
       {:httpoison, "~> 1.0"},
-      {:poison, "~> 3.1"}
+      {:poison, "~> 3.1"},
+      {:timex, "~> 3.2"}
     ]
   end
 end

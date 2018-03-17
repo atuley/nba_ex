@@ -23,7 +23,8 @@ defmodule NbaEx.Utils do
   def build_url(endpoint),                       do: base_url() <> @year <> "/#{endpoint}"
 
   def current_date do
-    Date.utc_today()
+    Timex.now("America/Los_Angeles")
+    |> DateTime.to_date()
     |> Date.to_iso8601(:basic)
   end
 
