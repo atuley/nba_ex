@@ -30,9 +30,9 @@ defmodule NbaExTest do
     end
   end
 
-  test "player_game_log_for/1" do
+  test "player_game_log/1" do
     use_cassette "player_game_log" do
-      player_game_log = NbaEx.player_game_log_for("203463")
+      player_game_log = NbaEx.player_game_log("203463")
 
       assert player_game_log |> Kernel.length() == 3
     end
