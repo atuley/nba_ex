@@ -4,10 +4,14 @@ defmodule NbaEx.MixProject do
   def project do
     [
       app: :nba_ex,
+      description: "Wrapper API for data.nba.net",
       version: "0.1.0",
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      package: package(),
+      name: "nba_ex",
+      source_url: "https://github.com/atuley/nba_ex"
     ]
   end
 
@@ -26,6 +30,14 @@ defmodule NbaEx.MixProject do
       {:httpoison, "~> 1.0"},
       {:poison, "~> 3.1"},
       {:timex, "~> 3.2"}
+    ]
+  end
+
+  defp package() do
+    [
+      name: "nba_ex",
+      maintainers: ["Alex Tuley"],
+      links: %{"GitHub" => "https://github.com/atuley/nba_ex"}
     ]
   end
 end

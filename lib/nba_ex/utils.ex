@@ -19,7 +19,7 @@ defmodule NbaEx.Utils do
     end
   end
 
-  def build_url(endpoint = "teams_config.json"), do: @base_url <> @year <> "/#{endpoint}"
+  def build_url(endpoint = "teams_config.json"), do: @base_url  <> @year <> "/#{endpoint}"
   def build_url(endpoint),                       do: base_url() <> @year <> "/#{endpoint}"
 
   def current_date do
