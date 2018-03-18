@@ -37,6 +37,7 @@ defmodule NbaEx.MixProject do
     [
       name: "nba_ex",
       maintainers: ["Alex Tuley"],
+      licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/atuley/nba_ex"}
     ]
   end

@@ -15,3 +15,5 @@ end
 ```
 
 The docs can be found at [https://hexdocs.pm/nba_ex](https://hexdocs.pm/nba_ex).
+
+This project is licensed under the terms of the MIT license.
