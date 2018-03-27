@@ -56,4 +56,5 @@ defmodule NbaEx.GameApi do
       player_stats: player_stats
     }
   end
+  defp build_boxscore(%{"basicGameData" => game}), do: %NbaEx.Boxscore{game: game}  
 end
