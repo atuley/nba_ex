@@ -18,7 +18,7 @@ defmodule NbaExTest do
     use_cassette "coaches" do
       coaches = NbaEx.coaches()
 
-      assert coaches |> Kernel.length() == 213
+      assert coaches |> Kernel.length() == 199
     end
   end
 
@@ -42,7 +42,7 @@ defmodule NbaExTest do
     use_cassette "players" do
       players = NbaEx.players()
 
-      assert players |> Kernel.length() == 599
+      assert players |> Kernel.length() == 499
     end
   end
 
@@ -66,7 +66,7 @@ defmodule NbaExTest do
     use_cassette "teams_config" do
       teams_config = NbaEx.teams_config()
 
-      assert teams_config |> Kernel.length() == 41
+      assert teams_config |> Kernel.length() == 53
     end
   end
 
@@ -90,7 +90,7 @@ defmodule NbaExTest do
     use_cassette "team_schedule" do
       team_schedule = NbaEx.team_schedule("warriors")
 
-      assert team_schedule |> Kernel.length() == 86
+      assert team_schedule |> Kernel.length() == 109
     end
   end
 end

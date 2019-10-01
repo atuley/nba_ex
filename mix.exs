@@ -6,7 +6,7 @@ defmodule NbaEx.MixProject do
       app: :nba_ex,
       description: "Wrapper API for data.nba.net",
       version: "0.1.2",
-      elixir: "~> 1.6",
+      elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       package: package(),
@@ -25,7 +25,7 @@ defmodule NbaEx.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ex_doc, "~> 0.18.3"},
+      {:ex_doc, "~> 0.21.2"},
       {:exvcr, "~> 0.10.1", only: :test},
       {:httpoison, "~> 1.0"},
       {:poison, "~> 3.1"},

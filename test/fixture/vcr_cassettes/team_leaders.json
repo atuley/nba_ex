@@ -6,20 +6,22 @@
       "method": "get",
       "options": [],
       "request_body": "",
-      "url": "http://data.nba.net/prod/v1/2017/teams/warriors/leaders.json"
+      "url": "http://data.nba.net/prod/v1/2018/teams/warriors/leaders.json"
     },
     "response": {
       "binary": false,
-      "body": "{\"_internal\":{\"pubDateTime\":\"2018-03-15 04:00:05.711\",\"xslt\":\"xsl/team/statistics/marty_team_leaders.xsl\",\"eventName\":\"overnight_batch\"},\"league\":{\"standard\":{\"seasonStageId\":2,\"ppg\":[{\"personId\":\"201142\",\"value\":\"26.6\"}],\"trpg\":[{\"personId\":\"203110\",\"value\":\"7.9\"}],\"apg\":[{\"personId\":\"203110\",\"value\":\"7.4\"}],\"fgp\":[{\"personId\":\"1628395\",\"value\":\"0.662\"}],\"tpp\":[{\"personId\":\"201956\",\"value\":\"0.455\"}],\"ftp\":[{\"personId\":\"1626188\",\"value\":\"1.000\"}],\"bpg\":[{\"personId\":\"201142\",\"value\":\"1.9\"}],\"spg\":[{\"personId\":\"201939\",\"value\":\"1.6\"}],\"tpg\":[{\"personId\":\"201142\",\"value\":\"3.1\"}],\"pfpg\":[{\"personId\":\"203110\",\"value\":\"2.7\"}]}}}",
+      "body": "{\"_internal\":{\"pubDateTime\":\"2019-06-27 16:11:45.559 EDT\",\"igorPath\":\"S3,1561666279810,1561666281251|router,1561666281251,1561666281430|domUpdater,1561666302648,1561666304871|feedProducer,1561666305191,1561666311955\",\"xslt\":\"NBA/xsl/team/statistics/marty_team_leaders.xsl\",\"xsltForceRecompile\":\"true\",\"xsltInCache\":\"false\",\"xsltCompileTimeMillis\":\"134\",\"xsltTransformTimeMillis\":\"969\",\"consolidatedDomKey\":\"prod__transform__marty_team_leaders__1335588174471\",\"endToEndTimeMillis\":\"32145\"},\"league\":{\"standard\":{\"seasonStageId\":4,\"ppg\":[{\"personId\":\"201142\",\"value\":\"32.3\"}],\"trpg\":[{\"personId\":\"203110\",\"value\":\"10.1\"}],\"apg\":[{\"personId\":\"203110\",\"value\":\"8.5\"}],\"fgp\":[{\"personId\":\"1627745\",\"value\":\"1.000\"}],\"tpp\":[{\"personId\":\"1628980\",\"value\":\"0.500\"}],\"ftp\":[{\"personId\":\"1626188\",\"value\":\"1.000\"}],\"bpg\":[{\"personId\":\"203110\",\"value\":\"1.5\"}],\"spg\":[{\"personId\":\"203110\",\"value\":\"1.4\"}],\"tpg\":[{\"personId\":\"203110\",\"value\":\"3.8\"}],\"pfpg\":[{\"personId\":\"203110\",\"value\":\"3.9\"}]},\"africa\":{\"seasonStageId\":4,\"ppg\":[],\"trpg\":[],\"apg\":[],\"fgp\":[],\"tpp\":[],\"ftp\":[],\"bpg\":[],\"spg\":[],\"tpg\":[],\"pfpg\":[]},\"sacramento\":{\"seasonStageId\":4,\"ppg\":[],\"trpg\":[],\"apg\":[],\"fgp\":[],\"tpp\":[],\"ftp\":[],\"bpg\":[],\"spg\":[],\"tpg\":[],\"pfpg\":[]},\"vegas\":{\"seasonStageId\":4,\"ppg\":[],\"trpg\":[],\"apg\":[],\"fgp\":[],\"tpp\":[],\"ftp\":[],\"bpg\":[],\"spg\":[],\"tpg\":[],\"pfpg\":[]},\"utah\":{\"seasonStageId\":4,\"ppg\":[],\"trpg\":[],\"apg\":[],\"fgp\":[],\"tpp\":[],\"ftp\":[],\"bpg\":[],\"spg\":[],\"tpg\":[],\"pfpg\":[]}}}",
       "headers": {
         "Server": "nginx",
         "Content-Type": "application/json",
-        "Last-Modified": "Thu, 15 Mar 2018 08:00:06 GMT",
-        "Cache-Control": "public, max-age=10",
-        "Date": "Thu, 15 Mar 2018 19:43:53 GMT",
-        "Content-Length": "630",
+        "Last-Modified": "Thu, 27 Jun 2019 20:11:51 GMT",
+        "Cache-Control": "max-age=10, public",
+        "Date": "Tue, 01 Oct 2019 20:17:35 GMT",
+        "Content-Length": "1469",
         "Connection": "keep-alive",
-        "Access-Control-Allow-Origin": ""
+        "X-CDN-COMPRESS": "GZIP",
+        "X-CDN-RULE": "CSS-JS-JSON",
+        "Set-Cookie": "akacd_data_nba_net_prod=1569961355~rv=32~id=6718b6b6e991b3dc9e9982dbd7831e3c; path=/; Expires=Tue, 01 Oct 2019 20:22:35 GMT"
       },
       "status_code": 200,
       "type": "ok"
