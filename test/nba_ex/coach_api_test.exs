@@ -14,9 +14,8 @@ defmodule CoachApiTest do
       number_of_coaches = coaches |> Kernel.length()
       first_coach       = coaches |> List.first()
 
-      assert number_of_coaches       == 213
+      assert number_of_coaches       == 199
       assert first_coach.college     == "Oklahoma"
-      assert first_coach.isAssistant == true
       assert first_coach.personId    == "1337"
     end
   end

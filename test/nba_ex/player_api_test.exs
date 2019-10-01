@@ -14,10 +14,10 @@ defmodule PlayerApiTest do
       actual_player  = players |> List.first()
       num_of_players = players |> Kernel.length()
 
-      assert num_of_players          == 599
-      assert actual_player.personId  == "203518"
-      assert actual_player.firstName == "Alex"
-      assert actual_player.lastName  == "Abrines"
+      assert num_of_players          == 499
+      assert actual_player.personId  == "1629121"
+      assert actual_player.firstName == "Jaylen"
+      assert actual_player.lastName  == "Adams"
     end
   end
 
@@ -28,10 +28,10 @@ defmodule PlayerApiTest do
       first_game      = player_game_log |> List.first()
 
       assert number_of_games           == 3
-      assert first_game.gameId         == "0021701002"
-      assert first_game.hTeam.score    == "103"
-      assert first_game.vTeam.isWinner == true
-      assert first_game.stats.points   == "16"
+      assert first_game.gameId         == "0021800702"
+      assert first_game.hTeam.score    == "120"
+      assert first_game.vTeam.isWinner == false
+      assert first_game.stats.points   == "10"
     end
   end
 end

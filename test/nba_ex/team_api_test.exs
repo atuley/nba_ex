@@ -24,8 +24,8 @@ defmodule TeamApiTest do
       teams_config      = TeamApi.teams_config()
       first_team_config = teams_config |> List.first()
 
-      assert first_team_config.teamId  == "1610612737"
-      assert first_team_config.tricode == "ATL"
+      assert first_team_config.teamId  == "15019"
+      assert first_team_config.tricode == "ADL"
     end
   end
 
@@ -35,7 +35,7 @@ defmodule TeamApiTest do
       ppg_leader   = team_leaders.ppg |> List.first()
 
       assert ppg_leader.personId == "201142"
-      assert ppg_leader.value    == "26.6"
+      assert ppg_leader.value    == "32.3"
     end
   end
 
@@ -54,9 +54,9 @@ defmodule TeamApiTest do
       length_of_schedule = team_schedule |> Kernel.length()
       first_game         = team_schedule |> List.first()
 
-      assert length_of_schedule      == 86
-      assert first_game.startTimeUTC == "2017-10-01T00:30:00.000Z"
-      assert first_game.vTeam.score  == "108"
+      assert length_of_schedule      == 109
+      assert first_game.startTimeUTC == "2018-09-30T00:30:00.000Z"
+      assert first_game.vTeam.score  == "114"
     end
   end
 end
