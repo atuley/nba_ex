@@ -1,5 +1,5 @@
 defmodule NbaEx.PlayerApi do
-  alias NbaEx.{Player, PlayerGameLog, Utils}
+  alias NbaEx.Utils
 
   @gamelog "gamelog.json"
   @players "players.json"
@@ -9,7 +9,7 @@ defmodule NbaEx.PlayerApi do
     |> Utils.build_url
     |> HTTPoison.get!
     |> Map.get(:body)
-    |> Poison.decode!(as: %{"league" => %{"standard" => [%Player{}]}})
+    |> Jason.decode!()
 
     response["league"]["standard"]
   end
@@ -19,7 +19,7 @@ defmodule NbaEx.PlayerApi do
     |> Utils.build_url(player_id)
     |> HTTPoison.get!
     |> Map.get(:body)
-    |> Poison.decode!(as: %{"league" => %{"standard" => [%PlayerGameLog{}]}})
+    |> Jason.decode!()
 
     response["league"]["standard"]
   end

@@ -29,7 +29,8 @@ defmodule NbaEx.MixProject do
       {:exvcr, "~> 0.10.1", only: :test},
       {:httpoison, "~> 1.0"},
       {:poison, "~> 3.1"},
-      {:timex, "~> 3.2"}
+      {:timex, "~> 3.2"},
+      {:jason, "~> 1.1"}
     ]
   end
 
