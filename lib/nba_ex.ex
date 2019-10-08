@@ -16,7 +16,7 @@ defmodule NbaEx do
       }
   """
   @spec boxscore(String.t(), String.t()) ::
-          %NbaEx.Boxscore{}
+          %{}
           | {:error, String.t()}
   def boxscore(date, game_id) do
     GameApi.get_boxscore(date, game_id)
@@ -76,7 +76,7 @@ defmodule NbaEx do
       }
   """
   @spec play_by_play(String.t(), String.t(), Integer.t()) ::
-          %NbaEx.PlayByPlay{}
+          %{}
           | {:error, String.t()}
   def play_by_play(date, game_id, period) do
     GameApi.play_by_play(date, game_id, period)
@@ -161,7 +161,7 @@ defmodule NbaEx do
         ]
       }
   """
-  @spec scoreboard() :: %NbaEx.Scoreboard{}
+  @spec scoreboard() :: %{}
   def scoreboard, do: GameApi.get_scoreboard()
 
   @doc """
@@ -186,7 +186,7 @@ defmodule NbaEx do
       }
   """
   @spec scoreboard_for(String.t()) ::
-          %NbaEx.Scoreboard{}
+          %{}
           | {:error, String.t()}
   def scoreboard_for(date) do
     GameApi.get_scoreboard(date)
@@ -213,7 +213,7 @@ defmodule NbaEx do
         ...
       ]
   """
-  @spec teams() :: [%NbaEx.Team{}]
+  @spec teams() :: [%{}]
   def teams, do: TeamApi.all()
 
   @doc """
@@ -231,7 +231,7 @@ defmodule NbaEx do
         ...
       ]
   """
-  @spec teams_config() :: [%NbaEx.TeamConfig{}]
+  @spec teams_config() :: [%{}]
   def teams_config, do: TeamApi.teams_config()
 
   @doc """
@@ -246,7 +246,7 @@ defmodule NbaEx do
       }
   """
   @spec team_leaders(String.t()) ::
-          %NbaEx.TeamLeaders{}
+          %{}
           | {:error, String.t()}
   def team_leaders(team_name) do
     TeamApi.team_leaders(team_name)
@@ -267,7 +267,7 @@ defmodule NbaEx do
       ]
   """
   @spec team_roster(String.t()) ::
-          [%NbaEx.Player{}]
+          [%{}]
           | {:error, String.t()}
   def team_roster(team_name) do
     TeamApi.team_roster(team_name)
@@ -292,7 +292,7 @@ defmodule NbaEx do
       ]
   """
   @spec team_schedule(String.t()) ::
-          [%NbaEx.Game{}]
+          [%{}]
           | {:error, String.t()}
   def team_schedule(team_name) do
     TeamApi.team_schedule(team_name)
