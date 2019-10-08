@@ -15,8 +15,8 @@ defmodule CoachApiTest do
       first_coach       = coaches |> List.first()
 
       assert number_of_coaches       == 199
-      assert first_coach.college     == "Oklahoma"
-      assert first_coach.personId    == "1337"
+      assert first_coach["college"]     == "Oklahoma"
+      assert first_coach["personId"]    == "1337"
     end
   end
 end

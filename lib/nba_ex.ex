@@ -51,7 +51,7 @@ defmodule NbaEx do
         ....
       ]
   """
-  @spec coaches() :: [%NbaEx.Coach{}]
+  @spec coaches() :: [%{}]
   def coaches, do: CoachApi.all()
 
   @doc """
@@ -112,7 +112,7 @@ defmodule NbaEx do
       ]
   """
   @spec player_game_log(String.t()) ::
-          [%NbaEx.PlayerGameLog{}]
+          [%{}]
           | {:error, String.t()}
   def player_game_log(player_id) do
     PlayerApi.game_log(player_id)
@@ -137,7 +137,7 @@ defmodule NbaEx do
         ...
       ]
   """
-  @spec players() :: [%NbaEx.Player{}]
+  @spec players() :: [%{}]
   def players, do: PlayerApi.all()
 
   @doc """
