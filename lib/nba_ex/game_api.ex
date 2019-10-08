@@ -1,5 +1,5 @@
 defmodule NbaEx.GameApi do
-  alias NbaEx.{Game, PlayByPlay, PlayerStat, Scoreboard, TeamStat, Utils}
+  alias NbaEx.Utils
 
   @boxscore   "boxscore.json"
   @pbp        "pbp"
@@ -10,25 +10,18 @@ defmodule NbaEx.GameApi do
     |> Utils.build_url(date, game_id)
     |> HTTPoison.get!()
     |> Map.get(:body)
-    |> Poison.decode!(
-      as: %{
-        "basicGameData" => %Game{},
-        "stats" => %{
-          "vTeam" => %TeamStat{},
-          "hTeam" => %TeamStat{},
-          "activePlayers" => [%PlayerStat{}]
-        }
-      }
-    )
+    |> Jason.decode!()
     |> build_boxscore
   end
 
   def play_by_play(date, game_id, period) do
-    @pbp
+    response = @pbp
     |> Utils.build_url(date, game_id, period)
     |> HTTPoison.get!()
     |> Map.get(:body)
-    |> Poison.decode!(as: %PlayByPlay{})
+    |> Jason.decode!()
+
+    response["plays"]
   end
 
   def get_scoreboard, do: Utils.current_date() |> get_scoreboard()
@@ -37,7 +30,7 @@ defmodule NbaEx.GameApi do
     |> Utils.build_url(date)
     |> HTTPoison.get!()
     |> Map.get(:body)
-    |> Poison.decode!(as: %Scoreboard{games: [%Game{}]})
+    |> Jason.decode!()
   end
 
   defp build_boxscore(%{
@@ -49,12 +42,14 @@ defmodule NbaEx.GameApi do
          }
        })
   do
-    %NbaEx.Boxscore{
-      game: game,
-      away_team_stats: away_team_stats,
-      home_team_stats: home_team_stats,
-      player_stats: player_stats
+    %{
+      "basicGameData" => game,
+      "stats" => %{
+        "vTeam" => away_team_stats,
+        "hTeam" => home_team_stats,
+        "activePlayers" => player_stats
+      }
     }
   end
-  defp build_boxscore(%{"basicGameData" => game}), do: %NbaEx.Boxscore{game: game}  
+  defp build_boxscore(%{"basicGameData" => game}), do: %{"basicGameData" => game}
 end

@@ -10,7 +10,7 @@ defmodule NbaExTest do
     use_cassette "boxscore" do
       boxscore = NbaEx.boxscore("20180309", "0021700977")
 
-      assert boxscore.game.gameId == "0021700977"
+      assert boxscore["basicGameData"]["gameId"] == "0021700977"
     end
   end
 
@@ -26,7 +26,7 @@ defmodule NbaExTest do
     use_cassette "play_by_play" do
       pbp = NbaEx.play_by_play("20180314", "0021701017", 3)
 
-      assert pbp.plays |> Kernel.length() == 101
+      assert pbp |> Kernel.length() == 101
     end
   end
 
@@ -50,7 +50,7 @@ defmodule NbaExTest do
     use_cassette "20180308_scoreboard" do
       scoreboard = NbaEx.scoreboard_for("20180308")
 
-      assert scoreboard.games |> Kernel.length() == 5
+      assert scoreboard["games"] |> Kernel.length() == 5
     end
   end
 

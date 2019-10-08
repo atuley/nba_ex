@@ -1,5 +1,5 @@
 defmodule NbaEx.CoachApi do
-  alias NbaEx.{Coach, Utils}
+  alias NbaEx.Utils
 
   @coaches "coaches.json"
 
@@ -8,7 +8,7 @@ defmodule NbaEx.CoachApi do
     |> Utils.build_url
     |> HTTPoison.get!
     |> Map.get(:body)
-    |> Poison.decode!(as: %{"league" => %{"standard" => [%Coach{}]}})
+    |> Jason.decode!()
 
     response["league"]["standard"]
   end
