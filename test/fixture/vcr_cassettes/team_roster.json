@@ -6,22 +6,22 @@
       "method": "get",
       "options": [],
       "request_body": "",
-      "url": "http://data.nba.net/prod/v1/2018/teams/warriors/roster.json"
+      "url": "http://data.nba.net/prod/v1/2019/teams/warriors/roster.json"
     },
     "response": {
       "binary": false,
-      "body": "{\"_internal\":{\"pubDateTime\":\"2019-06-21 02:39:53.755 EDT\",\"igorPath\":\"S3,1561099185676,1561099187141|router,1561099187141,1561099187730|domUpdater,1561099190421,1561099193579|feedProducer,1561099193703,1561099197251\",\"xslt\":\"NBA/xsl/team/roster/marty_roster_by_team.xsl\",\"xsltForceRecompile\":\"true\",\"xsltInCache\":\"false\",\"xsltCompileTimeMillis\":\"15\",\"xsltTransformTimeMillis\":\"574\",\"consolidatedDomKey\":\"prod__transform__marty_team_roster__3749262331693\",\"endToEndTimeMillis\":\"11575\"},\"league\":{\"standard\":{\"teamId\":\"1610612744\",\"players\":[{\"personId\":\"1628395\"},{\"personId\":\"101106\"},{\"personId\":\"1626188\"},{\"personId\":\"202326\"},{\"personId\":\"201939\"},{\"personId\":\"1629094\"},{\"personId\":\"201142\"},{\"personId\":\"1628980\"},{\"personId\":\"203110\"},{\"personId\":\"2738\"},{\"personId\":\"201973\"},{\"personId\":\"1627745\"},{\"personId\":\"1627814\"},{\"personId\":\"2733\"},{\"personId\":\"1626172\"},{\"personId\":\"1628035\"},{\"personId\":\"202691\"}]},\"africa\":{\"teamId\":\"1610612744\",\"players\":[]},\"sacramento\":{\"teamId\":\"1610612744\",\"players\":[{\"personId\":\"1629105\"},{\"personId\":\"1628395\"},{\"personId\":\"56523\"},{\"personId\":\"1628112\"},{\"personId\":\"1628492\"},{\"personId\":\"56526\"},{\"personId\":\"1629094\"},{\"personId\":\"1628980\"},{\"personId\":\"1629037\"},{\"personId\":\"56530\"},{\"personId\":\"204179\"},{\"personId\":\"1627745\"},{\"personId\":\"203705\"},{\"personId\":\"56534\"},{\"personId\":\"56535\"},{\"personId\":\"56536\"},{\"personId\":\"1626160\"}]},\"vegas\":{\"teamId\":\"1610612744\",\"players\":[{\"personId\":\"1629105\"},{\"personId\":\"1628395\"},{\"personId\":\"56523\"},{\"personId\":\"1628112\"},{\"personId\":\"1628492\"},{\"personId\":\"56526\"},{\"personId\":\"1629094\"},{\"personId\":\"1628980\"},{\"personId\":\"1629037\"},{\"personId\":\"56530\"},{\"personId\":\"204179\"},{\"personId\":\"1627745\"},{\"personId\":\"203705\"},{\"personId\":\"56534\"},{\"personId\":\"56535\"},{\"personId\":\"56536\"},{\"personId\":\"1626160\"}]},\"utah\":{\"teamId\":\"1610612744\",\"players\":[]}}}",
+      "body": "{\"_internal\":{\"pubDateTime\":\"2019-10-11 11:11:21.630 EDT\",\"igorPath\":\"S3,1570806667347,1570806667691|router,1570806667691,1570806667728|domUpdater,1570806668263,1570806681484|feedProducer,1570806681581,1570806689168\",\"xslt\":\"NBA/xsl/team/roster/marty_roster_by_team.xsl\",\"xsltForceRecompile\":\"true\",\"xsltInCache\":\"false\",\"xsltCompileTimeMillis\":\"13\",\"xsltTransformTimeMillis\":\"651\",\"consolidatedDomKey\":\"prod__transform__marty_team_roster__453899825436\",\"endToEndTimeMillis\":\"21821\"},\"league\":{\"standard\":{\"teamId\":\"1610612744\",\"players\":[{\"personId\":\"1629065\"},{\"personId\":\"202692\"},{\"personId\":\"1626161\"},{\"personId\":\"1627737\"},{\"personId\":\"201939\"},{\"personId\":\"1628980\"},{\"personId\":\"203110\"},{\"personId\":\"1626150\"},{\"personId\":\"1627814\"},{\"personId\":\"1626172\"},{\"personId\":\"203906\"},{\"personId\":\"1628035\"},{\"personId\":\"1629672\"},{\"personId\":\"1629673\"},{\"personId\":\"203922\"},{\"personId\":\"1626156\"},{\"personId\":\"1629346\"},{\"personId\":\"1629016\"},{\"personId\":\"202691\"},{\"personId\":\"1629308\"}]},\"africa\":{\"teamId\":\"1610612744\",\"players\":[]},\"sacramento\":{\"teamId\":\"1610612744\",\"players\":[{\"personId\":\"1629065\"},{\"personId\":\"57007\"},{\"personId\":\"1628980\"},{\"personId\":\"202690\"},{\"personId\":\"57008\"},{\"personId\":\"1627745\"},{\"personId\":\"1629664\"},{\"personId\":\"57009\"},{\"personId\":\"1629672\"},{\"personId\":\"1629673\"},{\"personId\":\"1628432\"},{\"personId\":\"1627781\"},{\"personId\":\"1629102\"},{\"personId\":\"1629346\"},{\"personId\":\"1629308\"},{\"personId\":\"204037\"}]},\"vegas\":{\"teamId\":\"1610612744\",\"players\":[{\"personId\":\"1629065\"},{\"personId\":\"57007\"},{\"personId\":\"1628980\"},{\"personId\":\"202690\"},{\"personId\":\"57008\"},{\"personId\":\"1629664\"},{\"personId\":\"57009\"},{\"personId\":\"1629672\"},{\"personId\":\"1629673\"},{\"personId\":\"1628432\"},{\"personId\":\"1627781\"},{\"personId\":\"1629102\"},{\"personId\":\"1629346\"},{\"personId\":\"1629308\"},{\"personId\":\"204037\"}]},\"utah\":{\"teamId\":\"1610612744\",\"players\":[]}}}",
       "headers": {
         "Server": "nginx",
         "Content-Type": "application/json",
-        "Last-Modified": "Fri, 21 Jun 2019 06:39:57 GMT",
+        "Last-Modified": "Fri, 11 Oct 2019 15:11:29 GMT",
         "Cache-Control": "max-age=10, public",
-        "Date": "Tue, 01 Oct 2019 20:17:30 GMT",
-        "Content-Length": "1858",
+        "Date": "Fri, 11 Oct 2019 15:18:16 GMT",
+        "Content-Length": "1876",
         "Connection": "keep-alive",
         "X-CDN-COMPRESS": "GZIP",
         "X-CDN-RULE": "CSS-JS-JSON",
-        "Set-Cookie": "akacd_data_nba_net_prod=1569961350~rv=18~id=376ab7a9474371b1670b659e59342968; path=/; Expires=Tue, 01 Oct 2019 20:22:30 GMT"
+        "Set-Cookie": "akacd_data_nba_net_prod=1570807396~rv=51~id=83dd54ee67f0e409def861f710eaa6ee; path=/; Expires=Fri, 11 Oct 2019 15:23:16 GMT"
       },
       "status_code": 200,
       "type": "ok"
