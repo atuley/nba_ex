@@ -1,7 +1,7 @@
 defmodule NbaEx.Utils do
   @base_url     "http://data.nba.net/prod/"
   @base_version "v1"
-  @year         "2018"
+  @year         "2019"
 
   def build_url(endpoint = "pbp", date, game_id, period),
     do: base_url() <> "#{date}/#{game_id}_#{endpoint}_#{period}.json"

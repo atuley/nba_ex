@@ -6,22 +6,22 @@
       "method": "get",
       "options": [],
       "request_body": "",
-      "url": "http://data.nba.net/prod/v1/2018/players/203463_gamelog.json"
+      "url": "http://data.nba.net/prod/v1/2019/players/203463_gamelog.json"
     },
     "response": {
       "binary": false,
-      "body": "{\"_internal\":{\"pubDateTime\":\"2019-02-07 13:04:48.408\",\"xslt\":\"xsl/player/marty_player_gamelog.xsl\",\"eventName\":\"player\"},\"league\":{\"standard\":[{\"gameId\":\"0021800702\",\"gameDateUTC\":\"2019-01-22\",\"gameUrlCode\":\"20190122/SACTOR\",\"isHomeGame\":false,\"hTeam\":{\"teamId\":\"1610612761\",\"score\":\"120\",\"isWinner\":true},\"vTeam\":{\"teamId\":\"1610612758\",\"score\":\"105\",\"isWinner\":false},\"stats\":{\"points\":\"10\",\"offReb\":\"1\",\"defReb\":\"1\",\"totReb\":\"2\",\"assists\":\"0\"}},{\"gameId\":\"0021800666\",\"gameDateUTC\":\"2019-01-17\",\"gameUrlCode\":\"20190117/SACCHA\",\"isHomeGame\":false,\"hTeam\":{\"teamId\":\"1610612766\",\"score\":\"114\",\"isWinner\":true},\"vTeam\":{\"teamId\":\"1610612758\",\"score\":\"95\",\"isWinner\":false},\"stats\":{\"points\":\"0\",\"offReb\":\"0\",\"defReb\":\"0\",\"totReb\":\"0\",\"assists\":\"0\"}},{\"gameId\":\"0021800620\",\"gameDateUTC\":\"2019-01-10\",\"gameUrlCode\":\"20190110/DETSAC\",\"isHomeGame\":true,\"hTeam\":{\"teamId\":\"1610612758\",\"score\":\"112\",\"isWinner\":true},\"vTeam\":{\"teamId\":\"1610612765\",\"score\":\"102\",\"isWinner\":false},\"stats\":{\"points\":\"0\",\"offReb\":\"0\",\"defReb\":\"0\",\"totReb\":\"0\",\"assists\":\"0\"}}]}}",
+      "body": "{\"_internal\":{\"pubDateTime\":\"2019-10-11 11:10:26.062 EDT\",\"igorPath\":\"S3,1570806566858,1570806566955|router,1570806566955,1570806567036|xmlProcessor,1570806598822,1570806599518|domUpdater,1570806615679,1570806625905|feedProducer,1570806626044,1570806626064\",\"xslt\":\"NBA/xsl/player/marty_player_gamelog.xsl\",\"xsltForceRecompile\":\"true\",\"xsltInCache\":\"false\",\"xsltCompileTimeMillis\":\"12\",\"xsltTransformTimeMillis\":\"2\",\"consolidatedDomKey\":\"prod__transform__marty_player_game_log__28330761354277\",\"endToEndTimeMillis\":\"59206\"},\"league\":{\"standard\":[{\"gameId\":\"0011900030\",\"gameDateUTC\":\"2019-10-10\",\"gameUrlCode\":\"20191010/TORHOU\",\"isHomeGame\":true,\"hTeam\":{\"teamId\":\"1610612745\",\"score\":\"118\",\"isWinner\":true},\"vTeam\":{\"teamId\":\"1610612761\",\"score\":\"111\",\"isWinner\":false},\"stats\":{\"points\":\"3\",\"offReb\":\"1\",\"defReb\":\"1\",\"totReb\":\"2\",\"assists\":\"1\"}},{\"gameId\":\"0011900017\",\"gameDateUTC\":\"2019-10-08\",\"gameUrlCode\":\"20191008/HOUTOR\",\"isHomeGame\":false,\"hTeam\":{\"teamId\":\"1610612761\",\"score\":\"134\",\"isWinner\":true},\"vTeam\":{\"teamId\":\"1610612745\",\"score\":\"129\",\"isWinner\":false},\"stats\":{\"points\":\"10\",\"offReb\":\"0\",\"defReb\":\"1\",\"totReb\":\"1\",\"assists\":\"1\"}},{\"gameId\":\"0011900002\",\"gameDateUTC\":\"2019-10-04\",\"gameUrlCode\":\"20191004/HOULAC\",\"isHomeGame\":false,\"hTeam\":{\"teamId\":\"1610612746\",\"score\":\"96\",\"isWinner\":false},\"vTeam\":{\"teamId\":\"1610612745\",\"score\":\"109\",\"isWinner\":true},\"stats\":{\"points\":\"9\",\"offReb\":\"0\",\"defReb\":\"2\",\"totReb\":\"2\",\"assists\":\"0\"}}]}}",
       "headers": {
         "Server": "nginx",
         "Content-Type": "application/json",
-        "Last-Modified": "Thu, 07 Feb 2019 18:04:48 GMT",
+        "Last-Modified": "Fri, 11 Oct 2019 15:10:26 GMT",
         "Cache-Control": "max-age=10, public",
-        "Date": "Tue, 01 Oct 2019 20:17:32 GMT",
-        "Content-Length": "1053",
+        "Date": "Fri, 11 Oct 2019 15:18:14 GMT",
+        "Content-Length": "1456",
         "Connection": "keep-alive",
         "X-CDN-COMPRESS": "GZIP",
         "X-CDN-RULE": "CSS-JS-JSON",
-        "Set-Cookie": "akacd_data_nba_net_prod=1569961352~rv=34~id=769af9b0487881e6654e00b8fb61fef4; path=/; Expires=Tue, 01 Oct 2019 20:22:32 GMT"
+        "Set-Cookie": "akacd_data_nba_net_prod=1570807394~rv=63~id=7f110d333a9cc9f47e7d1bcfc9dab28f; path=/; Expires=Fri, 11 Oct 2019 15:23:14 GMT"
       },
       "status_code": 200,
       "type": "ok"

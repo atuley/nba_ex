@@ -16,12 +16,12 @@
         "Content-Type": "application/json",
         "Last-Modified": "Wed, 09 May 2018 17:20:14 GMT",
         "Cache-Control": "max-age=10, public",
-        "Date": "Tue, 01 Oct 2019 20:17:33 GMT",
+        "Date": "Fri, 11 Oct 2019 15:18:14 GMT",
         "Content-Length": "18777",
         "Connection": "keep-alive",
         "X-CDN-COMPRESS": "GZIP",
         "X-CDN-RULE": "CSS-JS-JSON",
-        "Set-Cookie": "akacd_data_nba_net_prod=1569961353~rv=55~id=16bd7d5fb4e2cf29d663b86e7e9acbac; path=/; Expires=Tue, 01 Oct 2019 20:22:33 GMT"
+        "Set-Cookie": "akacd_data_nba_net_prod=1570807394~rv=100~id=18a5ecb92ccdf0f223d03a5868d3b484; path=/; Expires=Fri, 11 Oct 2019 15:23:14 GMT"
       },
       "status_code": 200,
       "type": "ok"
